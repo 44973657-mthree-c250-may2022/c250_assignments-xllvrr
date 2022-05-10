@@ -1,2 +1,3 @@
-# c250_assignments_10052022
-There are 5 assignments and all output need to place in it
+# C250 Assignments 10-05-22
+
+Included in this repository is the output for the code from this homework session
