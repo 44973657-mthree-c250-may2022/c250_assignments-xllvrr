@@ -1,0 +1,15 @@
+[ec2-user@ip-172-31-19-236 ~]$ sudo -i
+[root@ip-172-31-19-236 ~]# sudo yum erase -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Error: Need to pass a list of pkgs to erase
+ Mini usage:
+
+erase PACKAGE...
+
+Remove a package or packages from your system
+
+aliases: remove, autoremove, erase-n, erase-na, erase-nevra, autoremove-n, autoremove-na, autoremove-nevra, remove-n, remove-na, remove-nevra
+[root@ip-172-31-19-236 ~]# tree
+.
+
+0 directories, 0 files
