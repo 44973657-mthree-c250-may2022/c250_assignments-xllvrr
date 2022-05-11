@@ -1,3 +1,145 @@
+## Assignment 1
+[ec2-user@ip-172-31-19-236 ~]$ sudo -i
+[root@ip-172-31-19-236 ~]# sudo yum install tree
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Resolving Dependencies
+--> Running transaction check
+---> Package tree.x86_64 0:1.6.0-10.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+====================================================================================================================================================================================================================================================================================================================
+ Package                                                              Arch                                                                   Version                                                                               Repository                                                                  Size
+====================================================================================================================================================================================================================================================================================================================
+Installing:
+ tree                                                                 x86_64                                                                 1.6.0-10.amzn2.0.1                                                                    amzn2-core                                                                  47 k
+
+Transaction Summary
+====================================================================================================================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 47 k
+Installed size: 83 k
+Is this ok [y/d/N]: y
+Downloading packages:
+tree-1.6.0-10.amzn2.0.1.x86_64.rpm                                                                                                                                                                                                                                                           |  47 kB  00:00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : tree-1.6.0-10.amzn2.0.1.x86_64                                                                                                                                                                                                                                                                   1/1
+  Verifying  : tree-1.6.0-10.amzn2.0.1.x86_64                                                                                                                                                                                                                                                                   1/1
+
+Installed:
+  tree.x86_64 0:1.6.0-10.amzn2.0.1
+
+Complete!
+[root@ip-172-31-19-236 ~]# cd /opt
+[root@ip-172-31-19-236 opt]# tree
+.
+├── aws
+│   ├── apitools
+│   │   ├── cfn-init -> ./cfn-init-2.0-10
+│   │   └── cfn-init-2.0-10
+│   │       ├── bin
+│   │       │   ├── cfn-elect-cmd-leader
+│   │       │   ├── cfn-get-metadata
+│   │       │   ├── cfn-hup
+│   │       │   ├── cfn-init
+│   │       │   ├── cfn-send-cmd-event
+│   │       │   ├── cfn-send-cmd-result
+│   │       │   └── cfn-signal
+│   │       ├── init
+│   │       │   ├── redhat
+│   │       │   │   └── cfn-hup
+│   │       │   ├── systemd
+│   │       │   │   └── cfn-hup.service
+│   │       │   └── ubuntu
+│   │       │       └── cfn-hup
+│   │       └── share
+│   │           └── doc
+│   │               └── aws-cfn-bootstrap-2.0
+│   │                   ├── CHANGELOG.txt
+│   │                   ├── LICENSE.txt
+│   │                   └── NOTICE.txt
+│   └── bin
+│       ├── cfn-elect-cmd-leader -> ../apitools/cfn-init/bin/cfn-elect-cmd-leader
+│       ├── cfn-get-metadata -> ../apitools/cfn-init/bin/cfn-get-metadata
+│       ├── cfn-hup -> ../apitools/cfn-init/bin/cfn-hup
+│       ├── cfn-init -> ../apitools/cfn-init/bin/cfn-init
+│       ├── cfn-send-cmd-event -> ../apitools/cfn-init/bin/cfn-send-cmd-event
+│       ├── cfn-send-cmd-result -> ../apitools/cfn-init/bin/cfn-send-cmd-result
+│       ├── cfn-signal -> ../apitools/cfn-init/bin/cfn-signal
+│       ├── ec2-metadata -> /usr/bin/ec2-metadata
+│       ├── eic_curl_authorized_keys
+│       ├── eic_harvest_hostkeys
+│       ├── eic_parse_authorized_keys
+│       └── eic_run_authorized_keys
+└── rh
+
+14 directories, 25 files
+[root@ip-172-31-19-236 opt]#
+
+
+## Assignment 2
+[ec2-user@ip-172-31-19-236 ~]$ sudo -i
+[root@ip-172-31-19-236 ~]# sudo yum erase -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Error: Need to pass a list of pkgs to erase
+ Mini usage:
+
+erase PACKAGE...
+
+Remove a package or packages from your system
+
+aliases: remove, autoremove, erase-n, erase-na, erase-nevra, autoremove-n, autoremove-na, autoremove-nevra, remove-n, remove-na, remove-nevra
+[root@ip-172-31-19-236 ~]# tree
+.
+
+0 directories, 0 files
+
+## Assignment 3
+[ec2-user@ip-172-31-19-236 ~]$ sudo -i
+[root@ip-172-31-19-236 ~]# cd /opt
+[root@ip-172-31-19-236 opt]# mkdir demolinux
+[root@ip-172-31-19-236 opt]# cd demolinux
+[root@ip-172-31-19-236 demolinux]# echo "abc" > abc.txt
+[root@ip-172-31-19-236 demolinux]# ls
+abc.txt
+[root@ip-172-31-19-236 demolinux]# cat abc.txt
+abc
+[root@ip-172-31-19-236 demolinux]# ls
+abc.txt
+[root@ip-172-31-19-236 demolinux]# echo "abc1" > abc1.txt
+[root@ip-172-31-19-236 demolinux]# ls
+abc1.txt  abc.txt
+[root@ip-172-31-19-236 demolinux]# cat abc1.txt
+abc1
+
+## Assignment 4
+[ec2-user@ip-172-31-19-236 ~]$ sudo -i
+[root@ip-172-31-19-236 ~]# cd /opt
+[root@ip-172-31-19-236 opt]# mkdir demolinux
+[root@ip-172-31-19-236 opt]# cd demolinux
+[root@ip-172-31-19-236 demolinux]# echo "abc" > abc.txt
+[root@ip-172-31-19-236 demolinux]# ls -ltr
+total 4
+-rw-r--r-- 1 root root 4 May 10 09:57 abc.txt
+[root@ip-172-31-19-236 demolinux]# cat abc.txt
+abc
+[root@ip-172-31-19-236 demolinux]# ls -ltra
+total 4
+drwxr-xr-x 5 root root 44 May 10 09:57 ..
+-rw-r--r-- 1 root root  4 May 10 09:57 abc.txt
+drwxr-xr-x 2 root root 21 May 10 09:57 .
+[root@ip-172-31-19-236 demolinux]# echo "abc1" > abc1.txt
+[root@ip-172-31-19-236 demolinux]# ls
+abc1.txt  abc.txt
+[root@ip-172-31-19-236 demolinux]# cat abc1.txt
+abc1
+
+## Assignment 5
 [ec2-user@ip-172-31-19-236 ~]$ sudo -i
 [root@ip-172-31-19-236 ~]# sudo yum install -y httpd
 Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
