@@ -1,4 +1,4 @@
-# C250 Assignments 10-05-22
+# C250 Assignments 
 
 Author: Daniel Tan
 
